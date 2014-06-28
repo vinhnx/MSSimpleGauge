@@ -33,22 +33,23 @@
         _titleLabel.font = [UIFont systemFontOfSize:10];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.backgroundColor = [UIColor clearColor];
-        _titleLabel.textColor = [UIColor lightGrayColor];
+        _titleLabel.textColor = [UIColor whiteColor];
         if ([_titleLabel respondsToSelector:@selector(setTranslatesAutoresizingMaskIntoConstraints:)]) {
             _titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
         }
         [self addSubview:_titleLabel];
-       
+        
         UILabel *valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, _titleLabel.frame.size.height, frame.size.width, 28)];
         _valueLabel = valueLabel;
-        _valueLabel.font = [UIFont boldSystemFontOfSize:32];
+        _valueLabel.font = [UIFont systemFontOfSize:18];
+        _valueLabel.textColor = [UIColor whiteColor];
         _valueLabel.textAlignment = NSTextAlignmentCenter;
         _valueLabel.backgroundColor = [UIColor clearColor];
         if ([_valueLabel respondsToSelector:@selector(setTranslatesAutoresizingMaskIntoConstraints:)]) {
             _valueLabel.translatesAutoresizingMaskIntoConstraints = NO;
         }
         [self addSubview:_valueLabel];
-       
+        
         if ([NSLayoutConstraint class]) {
             NSDictionary *views = NSDictionaryOfVariableBindings(titleLabel, valueLabel);
             NSString *visualFormat = @"V:|-5-[titleLabel(==12)]-0-[valueLabel(==32)]";
@@ -58,11 +59,11 @@
                                                                            views:views];
             [self addConstraints:contraint];
         }
-      
+        
         CGPoint innerArcStartPoint = [self.backgroundArcLayer pointForArcEdge:ArcEdgeInner andArcSide:ArcSideBegining];
         _startRangeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, innerArcStartPoint.y+4, innerArcStartPoint.x, 14)];
         _startRangeLabel.font = [UIFont systemFontOfSize:10];
-        _startRangeLabel.textColor = [UIColor lightGrayColor];
+        _startRangeLabel.textColor = [UIColor whiteColor];
         _startRangeLabel.textAlignment = NSTextAlignmentRight;
         _startRangeLabel.backgroundColor = [UIColor clearColor];
         [self addSubview:_startRangeLabel];
@@ -70,7 +71,7 @@
         CGPoint innerArcEndPoint = [self.backgroundArcLayer pointForArcEdge:ArcEdgeInner andArcSide:ArcSideEnd];
         _endRangeLabel = [[UILabel alloc] initWithFrame:CGRectMake(innerArcEndPoint.x, innerArcEndPoint.y+4, self.frame.size.width-innerArcEndPoint.x, 14)];
         _endRangeLabel.font = [UIFont systemFontOfSize:10];
-        _endRangeLabel.textColor = [UIColor lightGrayColor];
+        _endRangeLabel.textColor = [UIColor whiteColor];
         _endRangeLabel.backgroundColor = [UIColor clearColor];
         [self addSubview:_endRangeLabel];
     }

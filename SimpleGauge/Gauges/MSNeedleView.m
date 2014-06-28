@@ -12,7 +12,7 @@
 
 - (void)setup
 {
-    _needleColor = [UIColor blackColor];
+    _needleColor = [UIColor colorWithWhite:0.667 alpha:0.770];
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -60,4 +60,5 @@
         [self setNeedsDisplay];
     }
 }
+
 @end
